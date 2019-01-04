@@ -9,8 +9,7 @@ module.exports = {
   devtool: 'inline-source-map',
   output: {
     path: resolve(__dirname, 'dist'),
-    filename: 'tfinjs.js',
-    library: 'tfinjs',
+    filename: 'index.js',
     libraryExport: 'default',
     libraryTarget: 'commonjs2',
   },

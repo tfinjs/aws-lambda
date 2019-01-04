@@ -357,6 +357,12 @@
     "@babel/helper-function-name" "^7.1.0"
     "@babel/helper-plugin-utils" "^7.0.0"
 
+"@babel/plugin-transform-instanceof@^7.2.0":
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-instanceof/-/plugin-transform-instanceof-7.2.0.tgz#2ee9dc9b389fa13cf325be10ff8414be0d10aecf"
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+
 "@babel/plugin-transform-literals@^7.2.0":
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-literals/-/plugin-transform-literals-7.2.0.tgz#690353e81f9267dad4fd8cfd77eafa86aba53ea1"
@@ -545,6 +551,30 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
+"@tfinjs/api@^0.0.8-beta":
+  version "0.0.8-beta"
+  resolved "https://registry.yarnpkg.com/@tfinjs/api/-/api-0.0.8-beta.tgz#6680fa40759cf2c4cf2b2d6aec802669dcc13a0a"
+  dependencies:
+    "@babel/plugin-transform-instanceof" "^7.2.0"
+    lodash "^4.17.11"
+    mkdirp "^0.5.1"
+
+"@tfinjs/aws-lambda-packager@^0.0.2-beta":
+  version "0.0.2-beta"
+  resolved "https://registry.yarnpkg.com/@tfinjs/aws-lambda-packager/-/aws-lambda-packager-0.0.2-beta.tgz#548e19a475bc2f3e19d556df2f1e0d74057bff76"
+  dependencies:
+    "@yarnpkg/lockfile" "^1.1.0"
+    adm-zip "^0.4.13"
+    eol "^0.9.1"
+    find-up "^3.0.0"
+    fs-extra "^7.0.1"
+    lodash "^4.17.11"
+    memory-fs "^0.4.1"
+    resolve "^1.9.0"
+    source-map-support "^0.5.9"
+    webpack "^4.28.2"
+    webpack-node-externals "^1.7.2"
+
 "@webassemblyjs/ast@1.7.11":
   version "1.7.11"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.7.11.tgz#b988582cafbb2b095e8b556526f30c90d057cace"
@@ -678,6 +708,10 @@
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.1.tgz#5c85d662f76fa1d34575766c5dcd6615abcd30d8"
 
+"@yarnpkg/lockfile@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@yarnpkg/lockfile/-/lockfile-1.1.0.tgz#e77a97fbd345b76d83245edcd17d393b1b41fb31"
+
 abab@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/abab/-/abab-2.0.0.tgz#aba0ab4c5eee2d4c79d3487d85450fb2376ebb0f"
@@ -721,6 +755,10 @@ acorn@^5.0.0, acorn@^5.5.3, acorn@^5.6.2:
 acorn@^6.0.1, acorn@^6.0.2, acorn@^6.0.4:
   version "6.0.4"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.0.4.tgz#77377e7353b72ec5104550aa2d2097a2fd40b754"
+
+adm-zip@^0.4.13:
+  version "0.4.13"
+  resolved "https://registry.yarnpkg.com/adm-zip/-/adm-zip-0.4.13.tgz#597e2f8cc3672151e1307d3e95cddbc75672314a"
 
 ajv-errors@^1.0.0:
   version "1.0.1"
@@ -1989,6 +2027,10 @@ enhanced-resolve@^4.1.0:
     graceful-fs "^4.1.2"
     memory-fs "^0.4.0"
     tapable "^1.0.0"
+
+eol@^0.9.1:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/eol/-/eol-0.9.1.tgz#f701912f504074be35c6117a5c4ade49cd547acd"
 
 errno@^0.1.1, errno@^0.1.3, errno@~0.1.7:
   version "0.1.7"
@@ -5051,7 +5093,7 @@ resolve@1.1.7:
   version "1.1.7"
   resolved "http://registry.npmjs.org/resolve/-/resolve-1.1.7.tgz#203114d82ad2c5ed9e8e0411b3932875e889e97b"
 
-resolve@^1.3.2, resolve@^1.5.0, resolve@^1.6.0:
+resolve@^1.3.2, resolve@^1.5.0, resolve@^1.6.0, resolve@^1.9.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.9.0.tgz#a14c6fdfa8f92a7df1d996cb7105fa744658ea06"
   dependencies:
@@ -5601,10 +5643,6 @@ test-exclude@^4.2.1:
 text-table@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
-
-tfinjs@^0.0.10:
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/tfinjs/-/tfinjs-0.0.10.tgz#df5706a57fab553bd2250c47279da87aff4d18c0"
 
 throat@^4.0.0:
   version "4.1.0"

@@ -2,10 +2,10 @@
   "name": "@tfinjs/aws-lambda",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "test": "jest",
-    "build": "webpack --entry=./src/cli/index.js -p --progress --config=./webpack.config.js && node prepend.js && chmod +x ./dist/tfinjs.js",
+    "build": "webpack --entry=./src/index.js -p --progress --config=./webpack.config.js",
     "jsdocs": "jsdoc -t ./node_modules/minami --recurse --destination ./jsdocs --readme ./README.md src",
     "docs": "docma && cp ./assets/favicon.ico ./docs",
     "docs:preview": "yarn run docs && docma serve",
@@ -31,12 +31,14 @@
     "webpack-node-externals": "^1.7.2"
   },
   "peerDependencies": {
-    "tfinjs": "^0.0.3"
+    "@tfinjs/api": "^0.0.4-beta"
   },
   "devDependencies": {
+    "@tfinjs/aws-lambda-packager": "^0.0.2-beta",
     "@babel/core": "^7.1.6",
     "@babel/plugin-proposal-class-properties": "^7.2.1",
     "@babel/preset-env": "^7.2.0",
+    "@tfinjs/api": "^0.0.8-beta",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
@@ -50,7 +52,6 @@
     "jsdoc": "^3.5.5",
     "minami": "^1.2.3",
     "prettier": "^1.15.1",
-    "tfinjs": "^0.0.10",
     "webpack-cli": "^3.1.2"
   }
 }
