@@ -2,8 +2,9 @@ import { resolve } from 'path';
 import { mkdirpSync } from 'fs-extra';
 import { versionedName, reference, Resource } from '@tfinjs/api';
 
-const getRelativeZipFilePath = (r) =>
-  `./${r.versionedName()}/.webpack/package.zip`;
+const relativeZipFilePath = './webpack/package.zip';
+
+const getS3Key = (r) => `${r.versionedName()}.zip`;
 
 class LambdaResource {
   constructor(
@@ -33,31 +34,14 @@ class LambdaResource {
       }),
     });
 
-    const lambda = new Resource(deploymentConfig, 'aws_lambda_function', name, {
-      function_name: versionedName(),
-      s3_key: versionedName(),
-
-      s3_bucket: reference(lambdaDeploymentBucket, 'id'),
-
-      handler: `service.${exportName}`,
-      runtime: 'nodejs8.10',
-
-      timeout,
-      memory_size: memorySize,
-
-      role: reference(role, 'arn'),
-
-      description: `tfinjs-aws-lambda/${name}`,
-    });
-
     const zipUpload = new Resource(
       deploymentConfig,
       'aws_s3_bucket_object',
       name,
       {
         bucket: reference(lambdaDeploymentBucket, 'id'),
-        key: versionedName(),
-        source: getRelativeZipFilePath,
+        key: getS3Key,
+        source: relativeZipFilePath,
         content_type: 'application/zip',
       },
     );
@@ -65,8 +49,35 @@ class LambdaResource {
     zipUpload.addPreBuildHook(async (r) => {
       const outputFolder = resolve(r.getProject().getDist());
       mkdirpSync(outputFolder);
-      await packageFunction(resolve(outputFolder, getRelativeZipFilePath(r)));
+      await packageFunction(
+        resolve(outputFolder, r.versionedName(), relativeZipFilePath),
+      );
     });
+
+    const lambda = new Resource(
+      deploymentConfig,
+      'aws_lambda_function',
+      name,
+      {
+        function_name: versionedName(),
+        s3_key: getS3Key(zipUpload),
+
+        s3_bucket: reference(lambdaDeploymentBucket, 'id'),
+
+        handler: `service.${exportName}`,
+        runtime: 'nodejs8.10',
+
+        timeout,
+        memory_size: memorySize,
+
+        role: reference(role, 'arn'),
+
+        description: `tfinjs-aws-lambda/${name}`,
+      },
+      {
+        dependsOn: [zipUpload],
+      },
+    );
 
     return {
       lambda,

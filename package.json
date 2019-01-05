@@ -1,6 +1,6 @@
 {
   "name": "@tfinjs/aws-lambda",
-  "version": "0.0.1",
+  "version": "0.0.3-beta",
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
@@ -31,14 +31,14 @@
     "webpack-node-externals": "^1.7.2"
   },
   "peerDependencies": {
-    "@tfinjs/api": "^0.0.4-beta"
+    "@tfinjs/api": "^0.0.15-beta"
   },
   "devDependencies": {
-    "@tfinjs/aws-lambda-packager": "^0.0.2-beta",
     "@babel/core": "^7.1.6",
     "@babel/plugin-proposal-class-properties": "^7.2.1",
     "@babel/preset-env": "^7.2.0",
-    "@tfinjs/api": "^0.0.8-beta",
+    "@tfinjs/api": "^0.0.15-beta",
+    "@tfinjs/aws-lambda-packager": "^0.0.2-beta",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",

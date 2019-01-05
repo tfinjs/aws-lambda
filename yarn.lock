@@ -551,9 +551,9 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@tfinjs/api@^0.0.8-beta":
-  version "0.0.8-beta"
-  resolved "https://registry.yarnpkg.com/@tfinjs/api/-/api-0.0.8-beta.tgz#6680fa40759cf2c4cf2b2d6aec802669dcc13a0a"
+"@tfinjs/api@^0.0.15-beta":
+  version "0.0.15-beta"
+  resolved "https://registry.yarnpkg.com/@tfinjs/api/-/api-0.0.15-beta.tgz#70d1b538343af8a1723fab2a73738e5ea6a0ba3a"
   dependencies:
     "@babel/plugin-transform-instanceof" "^7.2.0"
     lodash "^4.17.11"
