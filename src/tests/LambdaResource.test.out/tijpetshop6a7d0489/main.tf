@@ -15,10 +15,10 @@ terraform {
 }
 
 resource "aws_s3_bucket_object" "petLambdas" {
-  bucket       = "${data.terraform_remote_state.tijpetshop55b93834.id}"
+  bucket       = "${data.terraform_remote_state.tijpetshop55b93834.tfinjs_id}"
   content_type = "application/zip"
-  key          = "tijpetshop6a7d0489"
-  source       = "./tijpetshop6a7d0489/.webpack/package.zip"
+  key          = "tijpetshop6a7d0489.zip"
+  source       = "./aws_lambda_package.zip"
 }
 
 data "terraform_remote_state" "tijpetshop55b93834" {

@@ -19,10 +19,10 @@ resource "aws_lambda_function" "petLambdas" {
   function_name = "tijpetshop8870b842"
   handler       = "service.handler"
   memory_size   = 512
-  role          = "${data.terraform_remote_state.tijpetshop6036dcd6.arn}"
+  role          = "${data.terraform_remote_state.tijpetshop6036dcd6.tfinjs_arn}"
   runtime       = "nodejs8.10"
-  s3_bucket     = "${data.terraform_remote_state.tijpetshop55b93834.id}"
-  s3_key        = "tijpetshop8870b842"
+  s3_bucket     = "${data.terraform_remote_state.tijpetshop55b93834.tfinjs_id}"
+  s3_key        = "tijpetshop6a7d0489.zip"
   timeout       = 30
 }
 

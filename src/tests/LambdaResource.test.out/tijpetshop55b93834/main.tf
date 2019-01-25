@@ -23,6 +23,6 @@ resource "aws_s3_bucket" "terraform_state_prod" {
   }
 }
 
-output "id" {
+output "tfinjs_id" {
   value = "${aws_s3_bucket.terraform_state_prod.id}"
 }

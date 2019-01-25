@@ -559,9 +559,9 @@
     lodash "^4.17.11"
     mkdirp "^0.5.1"
 
-"@tfinjs/aws-lambda-packager@^0.0.2-beta":
-  version "0.0.2-beta"
-  resolved "https://registry.yarnpkg.com/@tfinjs/aws-lambda-packager/-/aws-lambda-packager-0.0.2-beta.tgz#548e19a475bc2f3e19d556df2f1e0d74057bff76"
+"@tfinjs/aws-lambda-packager@^0.0.3-beta":
+  version "0.0.3-beta"
+  resolved "https://registry.yarnpkg.com/@tfinjs/aws-lambda-packager/-/aws-lambda-packager-0.0.3-beta.tgz#d3647a544991322fb3218d065b4d9a3d724eca7e"
   dependencies:
     "@yarnpkg/lockfile" "^1.1.0"
     adm-zip "^0.4.13"

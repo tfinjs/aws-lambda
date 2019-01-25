@@ -1,4 +1,4 @@
-module.exports.test = async () => {
+export default async () => {
   console.log('log from lambda');
 
   const response = {

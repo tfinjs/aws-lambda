@@ -103,7 +103,6 @@ test('index', async () => {
     package: async (zipFilePath) => {
       await packager(resolve(__dirname, 'service.js'), zipFilePath);
     },
-    export: 'handler',
   });
 
   await Promise.all(

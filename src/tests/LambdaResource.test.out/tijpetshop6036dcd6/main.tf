@@ -20,6 +20,6 @@ resource "aws_iam_role" "petLambdas" {
 EOF
 }
 
-output "arn" {
+output "tfinjs_arn" {
   value = "${aws_iam_role.petLambdas.arn}"
 }

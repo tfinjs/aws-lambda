@@ -1,8 +1,8 @@
 import { resolve } from 'path';
 import { mkdirpSync } from 'fs-extra';
-import { versionedName, reference, Resource } from '@tfinjs/api';
+import { versionedName, reference, Resource, DeploymentConfig } from '@tfinjs/api';
 
-const relativeZipFilePath = './webpack/package.zip';
+const relativeZipFilePath = './aws_lambda_package.zip';
 
 const getS3Key = (r) => `${r.versionedName()}.zip`;
 
@@ -13,11 +13,13 @@ class LambdaResource {
     {
       lambdaDeploymentBucket,
       package: packageFunction,
-      export: exportName,
       timeout = 30,
       memorySize = 512,
     },
   ) {
+    if (!(deploymentConfig instanceof DeploymentConfig)) {
+      throw new Error('Error you have two versions of @tfinjs/api in you node_modules, @tfinjs/aws-lambda is not using the same version as your project');
+    }
     const role = new Resource(deploymentConfig, 'aws_iam_role', name, {
       assume_role_policy: JSON.stringify({
         Version: '2012-10-17',
@@ -64,7 +66,7 @@ class LambdaResource {
 
         s3_bucket: reference(lambdaDeploymentBucket, 'id'),
 
-        handler: `service.${exportName}`,
+        handler: 'service.handler',
         runtime: 'nodejs8.10',
 
         timeout,
