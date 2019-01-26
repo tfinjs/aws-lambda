@@ -1,6 +1,11 @@
 import { resolve } from 'path';
 import { mkdirpSync } from 'fs-extra';
-import { versionedName, reference, Resource, DeploymentConfig } from '@tfinjs/api';
+import {
+  versionedName,
+  reference,
+  Resource,
+  DeploymentConfig,
+} from '@tfinjs/api';
 
 const relativeZipFilePath = './aws_lambda_package.zip';
 
@@ -18,7 +23,9 @@ class LambdaResource {
     },
   ) {
     if (!(deploymentConfig instanceof DeploymentConfig)) {
-      throw new Error('Error you have two versions of @tfinjs/api in you node_modules, @tfinjs/aws-lambda is not using the same version as your project');
+      throw new Error(
+        'Error you have two versions of @tfinjs/api in you node_modules, @tfinjs/aws-lambda is not using the same version as your project',
+      );
     }
     const role = new Resource(deploymentConfig, 'aws_iam_role', name, {
       assume_role_policy: JSON.stringify({
